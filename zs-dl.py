@@ -102,7 +102,7 @@ def set_proxy():
 	s.proxies.update({'https': 'https://' + cfg.proxy})
 	
 def check_url(url):
-	regex = r'http://www(\d{1,9}).zippyshare.com/v/([a-zA-Z\d]{8})/file.html'
+	regex = r'\w+://www(\d{1,9}).zippyshare.com/v/([a-zA-Z\d]{8})/file.html'
 	match = re.match(regex, url)
 	if match:
 		return match.group(1), match.group(2)
